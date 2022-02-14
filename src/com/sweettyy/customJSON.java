@@ -2,7 +2,6 @@ package com.sweettyy;
 
 import com.google.gson.Gson;
 
-import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
