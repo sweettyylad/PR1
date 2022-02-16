@@ -1,12 +1,13 @@
 package com.sweettyy;
 
-public class Data {
+public class Data { // * Наш класс с произвольными данными для записи их в файлы
 
-    String WV;
-    String WV2;
-    int SN;
-    boolean STF;
+    String WV; // * Строка
+    String WV2; // * Строка 2
+    int SN; // * Число
+    boolean STF; // * Логическое значение
 
+    // * Конструкторы
     Data() {
         WV = "";
         WV2 = "";
@@ -26,6 +27,7 @@ public class Data {
         STF = fr;
     }
 
+    // * Вывод содержимого
     void displayData() {
         System.out.println("Содержимое объекта:");
         System.out.print("Строка 1 - " + WV + "\n");

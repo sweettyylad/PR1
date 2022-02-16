@@ -6,24 +6,26 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 
 public class customJSON extends customFile{
-
+    // * Класс наследуемый от customFile
     customJSON(String filename, String content, String content2, int num, boolean adv) {
-        super(filename, content);
-        d.WV2 = content2;
+        super(filename, content); // * Вызываем конструктор класса родителя
+        d.WV2 = content2; // * Записываем остальные произвольные данные
         d.SN = num;
         d.STF = adv;
     }
 
-    @Override
+    @Override // * Переопределяем метод записи данных в файл
     void write() {
-        Gson gson = new Gson();
-        String json = gson.toJson(d);
-        try (FileOutputStream fos = new FileOutputStream(f)) {
-            byte[] buffer = json.getBytes();
-            fos.write(buffer, 0, buffer.length);
-            Wait("Данные записаны в файл");
+        Gson gson = new Gson(); // * Создаем экземпляр класса GSON для работы с JSON
+        String json = gson.toJson(d); // * Переводим наши произвольные данные в JSON-строку
+        try (FileOutputStream fos = new FileOutputStream(f)) { // * Открываем поток записи
+            byte[] buffer = json.getBytes(); // * Теперь уже берем длину JSON-строки
+            fos.write(buffer, 0, buffer.length); // * И записываем её в файл
+            fos.close();
         } catch (IOException ex) {
-            System.out.println(ex.getMessage());
+            System.out.println(ex.getMessage()); // * Проблема
+        } finally{
+            Wait("Данные записаны в файл"); // * Успешный итог
         }
     }
 }
