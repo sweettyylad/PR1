@@ -13,8 +13,8 @@ public class customZIP {
 
     String name;
 
-    customZIP(String ZIPname){
-        name = ZIPname;
+    customZIP(String ZIPn){
+        name = ZIPn;
     }
 
     // * Функция создания и заполнения архива файлом
