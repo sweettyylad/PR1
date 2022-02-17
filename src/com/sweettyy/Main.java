@@ -9,10 +9,10 @@ public class Main {
     public static void main(String[] args) throws ParserConfigurationException, IOException {
 
         getInfoAboutRoots();
-//        createAndDelFile();
-//        createAndDelFileJSON();
-//        createAndDelFileXML();
-//        createAndDelZIP();
+        createAndDelFile();
+        createAndDelFileJSON();
+        createAndDelFileXML();
+        createAndDelZIP();
     }
 
 
