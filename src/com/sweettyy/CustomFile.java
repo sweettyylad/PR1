@@ -7,18 +7,18 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.Scanner;
 
-public class customFile {
+public class CustomFile {
 
     File f; // * Переменная с типом File (класс для работы с файлами)
     Data d = new Data(); // * Произвольные данные
 
     // * Конструкторы для разных ситуаций
-    customFile(String filename, String content){
-        f = new File("C:\\Users\\AbsolutMonkey\\Desktop\\" + filename);
+    CustomFile(String filename, String content){
+        f = new File(Main.DESKTOP + filename);
         d.WV = content;
     }
-    customFile(String filename){
-        f = new File("C:\\Users\\AbsolutMonkey\\Desktop\\" + filename);
+    CustomFile(String filename){
+        f = new File(Main.DESKTOP + filename);
     }
 
     // * Функция ожидания нажатия любой кнопки для продолжения работы приложения

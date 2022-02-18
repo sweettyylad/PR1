@@ -19,9 +19,9 @@ import java.nio.file.Paths;
 import java.util.Scanner;
 
 // !!!ALARM IT'S VERY HARD!!!
-public class customXML extends customFile{
+public class CustomXML extends CustomFile {
     // * Наследуем от того же класса обычного файла
-    customXML(String filename) {
+    CustomXML(String filename) {
         super(filename);
     } // * Конструктор
 

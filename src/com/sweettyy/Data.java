@@ -30,8 +30,7 @@ public class Data { // * Наш класс с произвольными дан�
     // * Вывод содержимого
     void displayData() {
         System.out.println("Содержимое объекта:");
-        System.out.print("Строка 1 - " + WV + "\n");
-        System.out.print("Строка 2 - " + WV2 + "\n");
+        System.out.print("Строка 1 - " + WV + "\n");        System.out.print("Строка 2 - " + WV2 + "\n");
         System.out.print("Число - " + SN + "\n");
         System.out.print("Утверждение - " + STF + "\n");
     }

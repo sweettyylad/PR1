@@ -5,9 +5,9 @@ import com.google.gson.Gson;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-public class customJSON extends customFile{
-    // * Класс наследуемый от customFile
-    customJSON(String filename, String content, String content2, int num, boolean adv) {
+public class CustomJSON extends CustomFile {
+    // * Класс наследуемый от CustomFile
+    CustomJSON(String filename, String content, String content2, int num, boolean adv) {
         super(filename, content); // * Вызываем конструктор класса родителя
         d.WV2 = content2; // * Записываем остальные произвольные данные
         d.SN = num;

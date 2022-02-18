@@ -9,11 +9,11 @@ import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 import java.util.zip.ZipOutputStream;
 
-public class customZIP {
+public class CustomZIP {
 
     String name;
 
-    customZIP(String ZIPn){
+    CustomZIP(String ZIPn){
         name = ZIPn;
     }
 
@@ -21,8 +21,8 @@ public class customZIP {
     // * Имя файла принимается в параметрах метода
     void createAndPut( String filename){
         try (
-                ZipOutputStream zout = new ZipOutputStream(new FileOutputStream("C:\\Users\\AbsolutMonkey\\Desktop\\" + this.name)); // * Поток для записи в архив
-                FileInputStream fis = new FileInputStream("C:\\Users\\AbsolutMonkey\\Desktop\\" +filename) // * Поток для чтения файла
+                ZipOutputStream zout = new ZipOutputStream(new FileOutputStream(Main.DESKTOP + this.name)); // * Поток для записи в архив
+                FileInputStream fis = new FileInputStream(Main.DESKTOP +filename) // * Поток для чтения файла
         ) {
             ZipEntry entry1 = new ZipEntry(filename); // * Создаем запись в ZIP с указанным именем
             zout.putNextEntry(entry1); // * Начинаем запись файла, ставим поток в начало данных записи
@@ -34,20 +34,20 @@ public class customZIP {
             System.out.println(ex.getMessage());
         }
         try {
-            Files.delete(Paths.get("C:\\Users\\AbsolutMonkey\\Desktop\\" + filename)); // * Удаляем старый файл, оставшийся вне архива
+            Files.delete(Paths.get(Main.DESKTOP + filename)); // * Удаляем старый файл, оставшийся вне архива
         } catch (IOException x) {
             System.err.println(x);
         }
     }
     void unpack(){
-        try(ZipInputStream zin = new ZipInputStream(new FileInputStream("C:\\Users\\AbsolutMonkey\\Desktop\\" + this.name)))
+        try(ZipInputStream zin = new ZipInputStream(new FileInputStream(Main.DESKTOP + this.name)))
         {
             ZipEntry entry; // * Создаем запись в ZIP
             String name; // * Для хранения имени файла
             while((entry=zin.getNextEntry())!=null){
                 name = entry.getName(); // * Получаем имя записи (файла, лежащего в) ZIP
                 // * Открываем поток на запись данных в файл
-                FileOutputStream fout = new FileOutputStream("C:\\Users\\AbsolutMonkey\\Desktop\\" + name);
+                FileOutputStream fout = new FileOutputStream(Main.DESKTOP + name);
                 for (int c = zin.read(); c != -1; c = zin.read()) {
                     fout.write(c); // * Записываем в поток
                 }
@@ -62,7 +62,7 @@ public class customZIP {
     }
     void delete(){
         try {
-            Files.delete(Paths.get("C:\\Users\\AbsolutMonkey\\Desktop\\"+this.name)); // * Удаляем архив
+            Files.delete(Paths.get(Main.DESKTOP +this.name)); // * Удаляем архив
         } catch (IOException x) {
             System.err.println(x);
         }
